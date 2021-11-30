@@ -1,0 +1,45 @@
+﻿@page
+@model RazorPagesMovie.Pages.Uploads.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Files</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Files.DocumentId" />
+            <div class="form-group">
+                <label asp-for="Files.Name" class="control-label"></label>
+                <input asp-for="Files.Name" class="form-control" />
+                <span asp-validation-for="Files.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Files.FileType" class="control-label"></label>
+                <input asp-for="Files.FileType" class="form-control" />
+                <span asp-validation-for="Files.FileType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Files.CreatedOn" class="control-label"></label>
+                <input asp-for="Files.CreatedOn" class="form-control" />
+                <span asp-validation-for="Files.CreatedOn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

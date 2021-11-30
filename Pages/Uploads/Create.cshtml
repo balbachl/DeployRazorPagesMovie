@@ -1,0 +1,34 @@
+﻿@page
+@model RazorPagesMovie.Pages.Uploads.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Upload File</h1>
+
+<div class="row">
+    <div class="col-md-5">
+        <form method="post" enctype="multipart/form-data" >
+            <div class="form-group">
+                <div class="col-md-10">
+                    <p>Upload file</p>
+                    <input class="form-control" name="files" type="file" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input class="btn btn-success" type="submit" value="Upload" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
